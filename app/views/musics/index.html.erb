@@ -1,6 +1,6 @@
 <h1>Listing musics</h1>
 
-<table>
+<table class="table">
   <tr>
     <th>Title</th>
     <th>Description</th>
@@ -12,7 +12,7 @@
   </tr>
 
 <% @musics.each do |music| %>
-  <tr>
+  <tr class="success">
     <td><%= music.title %></td>
     <td><%= music.description %></td>
     <td><%= music.filename %></td>
