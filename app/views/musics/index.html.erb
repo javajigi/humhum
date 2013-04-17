@@ -13,10 +13,10 @@
 
 <% @musics.each do |music| %>
   <tr class="success">
-    <td><%= music.title %></td>
-    <td><%= music.description %></td>
+    <td><%= music.album_title %></td>
+    <td><%= music.album_description %></td>
     <td><%= music.filename %></td>
-    <td><%= music.artist %></td>
+    <td><%= music.user_name %></td>
     <td><%= link_to 'Show', music %></td>
     <td><%= link_to 'Edit', edit_music_path(music) %></td>
     <td><%= link_to 'Destroy', music, method: :delete, data: { confirm: 'Are you sure?' } %></td>

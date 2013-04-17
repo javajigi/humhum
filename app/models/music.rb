@@ -1,3 +1,3 @@
 class Music < ActiveRecord::Base
-  attr_accessible :artist, :description, :filename, :title
+  attr_accessible :user_picture, :user_name, :album_picture, :album_title, :album_description, :filename, :ip
 end
