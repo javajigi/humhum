@@ -1,17 +1,29 @@
-<h1>Listing musics</h1>
 
-<table class="table">
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Filename</th>
-    <th>Artist</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+
 
 <% @musics.each do |music| %>
+  <div class = "board_container">
+    <div class = "user_info_container">
+      <div class = "user_pic_container">
+        <img class = "user_pic" src="<%= music.user_picture %>" />
+      </div>
+      <div class = "name_title_container">
+        <div class = "user_name"><%= music.user_name %></div>
+        <div class = "album_title"><%= music.album_title %></div>
+      </div>
+      <div class = "album_info_container">
+        <div class = "album_pic_container">
+          <img class = "album_pic" src="<%= music.album_picture %>" />
+        </div>
+        <div class = "album_desc"><%= music.album_description %></div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+<!--
   <tr class="success">
     <td><%= music.album_title %></td>
     <td><%= music.album_description %></td>
@@ -20,9 +32,8 @@
     <td><%= link_to 'Show', music %></td>
     <td><%= link_to 'Edit', edit_music_path(music) %></td>
     <td><%= link_to 'Destroy', music, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  </tr>-->
 <% end %>
-</table>
 
 <br />
 
