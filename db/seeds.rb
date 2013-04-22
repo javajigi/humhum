@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-   musics = Music.create([ {user_picture:'http://www.shirinsadeghi.com/wp/wp-content/uploads/2012/12/psy.jpg', user_name:'PSY', album_picture:'http://cfile9.uf.tistory.com/image/1866934D5003C7F71AB19A', album_title:'Gangnam Style', album_description:'psy psyp syp syp sy psypsypsyp syp syp spy', filename:'gangnam.mp3', ip:'127.0.0.1'} ])
+   musics = Music.create([ {user_picture:'http://binaryapi.ap.org/b18aee87a63e4ad1954406ff9b08be2f/460x.jpg', user_name:'PSY', album_picture:'http://cfile9.uf.tistory.com/image/1866934D5003C7F71AB19A', album_title:'Gangnam Style', album_description:'psy psyp syp syp sy psypsypsyp syp syp spy', filename:'gangnam.mp3', ip:'127.0.0.1'} ])
 
 
 

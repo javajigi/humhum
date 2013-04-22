@@ -1,40 +1,56 @@
 
+  <div id="content_area">
 
-
-<% @musics.each do |music| %>
-  <div class = "board_container">
-    <div class = "user_info_container">
-      <div class = "user_pic_container">
-        <img class = "user_pic" src="<%= music.user_picture %>" />
-      </div>
-      <div class = "name_title_container">
-        <div class = "user_name"><%= music.user_name %></div>
-        <div class = "album_title"><%= music.album_title %></div>
-      </div>
-      <div class = "album_info_container">
-        <div class = "album_pic_container">
-          <img class = "album_pic" src="<%= music.album_picture %>" />
-        </div>
-        <div class = "album_desc"><%= music.album_description %></div>
-      </div>
+    <!-- 여기부터가 업로더 위치입니당~~~~
+    <div id="uploader">
     </div>
+        여기까지가 업로더 위치입니당~~~ -->
 
-  </div>
+    <!-- 여기부터 뮤직피드 -->
+    <div id="musicfeed">
+      <ul id="home_stream">
+
+        <% @musics.each do |music| %>
+          <li class="streamMusic">
+            <div class="musicContent">
+              <!-- 사용자 사진 -->
+              <img class="userPicture" src ="<%=music.user_picture %>"/>
+
+              <div class="musicInnerContent">
+                <div class="mainWrapper">
+                  <div role="article">
+                    <!-- 사용자 이름 -->
+                    <div class="userName">
+                      <p><%= music.user_name %></p>
+                    </div>
+                    <!-- 앨범 제목 -->
+                    <div class="albumTitle">
+                      <strong><%= music.album_title %></strong>
+                    </div>
+
+                    <div class="mainStreamAttachment">
+                      <div class="sharedMusic">
+                        <!-- 앨범 사진 -->
+                        <img class="albumPicture" src ="<%= music.album_picture %>"/>
+                        <!-- 앨범 설명 -->
+                        <div class="albumDescription">
+                          <div class="attachText">
+                            <p><%= music.album_description %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        <% end %>
+
+      </ul>
+    </div>
+    <!-- 여기까지 뮤직피드 -->
 
 
 
-<!--
-  <tr class="success">
-    <td><%= music.album_title %></td>
-    <td><%= music.album_description %></td>
-    <td><%= music.filename %></td>
-    <td><%= music.user_name %></td>
-    <td><%= link_to 'Show', music %></td>
-    <td><%= link_to 'Edit', edit_music_path(music) %></td>
-    <td><%= link_to 'Destroy', music, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>-->
-<% end %>
-
-<br />
-
-<%= link_to 'New Music', new_music_path %>
+  </div>  
