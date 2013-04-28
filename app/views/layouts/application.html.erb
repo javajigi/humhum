@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Humhum</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-  <link href="/assets/bootstrap.min.css" rel="stylesheet" media="screen">
-</head>
-<body id = "content_container">
-<a href="https://github.com/javajigi/humhum"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork us on GitHub"></a>
-<%= yield %>
+	<head>
+	  	<title>Humhum</title>
+	  	<%= stylesheet_link_tag    "application", :media => "all" %>
+	  	<%= javascript_include_tag "application" %>
+	  	<%= csrf_meta_tags %>
+	  	<link href="/assets/bootstrap.min.css" rel="stylesheet" media="screen">
+	</head>
 
-</body>
+	<body id = "content_container">
+
+		<a href="https://github.com/javajigi/humhum">
+			<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub">
+		</a>
+
+		<% if user_signed_in? %>
+				<%= link_to 'Logout', destroy_user_session_path, :method => :delete, class: "btn btn-link" %>
+				<%= link_to 'Edit Registration', edit_user_registration_path, class: "btn btn-link" %>
+		<% end %>
+
+		<p class="notice text-info"><%= notice %></p>
+		<p class="alert text-warning"><%= alert %></p>
+
+		<%= yield %>
+
+	</body>
 </html>

@@ -1,9 +1,11 @@
 class MusicsController < ApplicationController
+
+  before_filter :authenticate_user!
   # GET /musics
   # GET /musics.json
   def index
     @musics = Music.all
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @musics }
