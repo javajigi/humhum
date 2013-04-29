@@ -5,33 +5,38 @@
 	  	<%= stylesheet_link_tag    "application", :media => "all" %>
 	  	<%= javascript_include_tag "application" %>
 	  	<%= csrf_meta_tags %>
-	  	<link href="/assets/bootstrap.min.css" rel="stylesheet" media="screen">
 	</head>
 
-	<body id = "content_container">
+	<body>
 
-		<a href="https://github.com/javajigi/humhum" id = "github_ribbons">
-			<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub">
+		<a href="https://github.com/javajigi/humhum">
+			<img id="github_ribbons" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub">
 		</a>
 
 		<div class="navbar navbar-inverse navbar-fixed-top">
 			<div class="navbar-inner">
 				<div class="container">
-					<a href="#", class="brand">HumHum</a>
+
+					<a href="#" class="brand">HumHum</a>
+
+					<div class="nav-collapse collapse">
+						<ul class="nav pull-right">
+							<% if user_signed_in? %>
+								<li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+							<% end %>
+						</ul>
+					</div>
+
 				</div>
 			</div>
 		</div>
 
+		<div class="container">
+			<p class="notice text-info"><%= notice %></p>
+			<p class="alert text-warning"><%= alert %></p>
 
-		<% if user_signed_in? %>
-				<%= link_to 'Logout', destroy_user_session_path, :method => :delete, class: "btn btn-link" %>
-				<%= link_to 'Edit Registration', edit_user_registration_path, class: "btn btn-link" %>
-		<% end %>
-
-		<p class="notice text-info"><%= notice %></p>
-		<p class="alert text-warning"><%= alert %></p>
-
-		<%= yield %>
+			<%= yield %>
+		</div>
 
 	</body>
 </html>
