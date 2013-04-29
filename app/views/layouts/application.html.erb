@@ -17,19 +17,30 @@
 			<div class="navbar-inner">
 				<div class="container">
 
-					<a href="#" class="brand">HumHum</a>
+					<a href="/" class="brand">HumHum</a>
 
 					<div class="nav-collapse collapse">
 
 						<div class="pull-right">
 							<ul class="nav">
+
 								<% if user_signed_in? %>
-									<li class="active"><a><%= current_user.email %></a></li>
-									<li><i class="icon-cog icon-white"></i></li>
-									<li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+											<%= current_user.email %>
+											<span class="caret"></span>
+										</a>
+
+										<ul class="dropdown-menu">
+											<li><%= link_to 'Edit registration', edit_user_registration_path %></li>
+											<li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+										</ul>
+									</li>
 								<% end %>
+
 							</ul>
 						</div>
+
 					</div>
 				</div>
 			</div>
@@ -42,9 +53,10 @@
 			<%= yield %>
 
 			<div id="footer">
-				<p class="muted credit pull-right">2013<a href="http://nhnnext.org" class="btn btn-link">NHNNEXT</a></p>
+				<div class="pull-right">
+					<p class="muted credit">2013<a href="http://nhnnext.org" class="btn btn-link">NHNNEXT</a></p>
+				</div>
 			</div>
-
 		</div>
 	</body>
 </html>
