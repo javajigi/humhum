@@ -20,24 +20,31 @@
 					<a href="#" class="brand">HumHum</a>
 
 					<div class="nav-collapse collapse">
-						<ul class="nav pull-right">
-							<% if user_signed_in? %>
-								<li class="active"><a><%= current_user.email %></a></li>
-								<li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
-							<% end %>
-						</ul>
-					</div>
 
+						<div class="pull-right">
+							<ul class="nav">
+								<% if user_signed_in? %>
+									<li class="active"><a><%= current_user.email %></a></li>
+									<li><i class="icon-cog icon-white"></i></li>
+									<li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+								<% end %>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 
 		<div class="container">
-			<p class="notice text-info"><%= notice %></p>
-			<p class="alert text-warning"><%= alert %></p>
+			<!--<p class="notice text-info"><%= notice %></p>
+			<p class="alert text-warning"><%= alert %></p>-->
 
 			<%= yield %>
-		</div>
 
+			<div id="footer">
+				<p class="muted credit pull-right">2013<a href="http://nhnnext.org" class="btn btn-link">NHNNEXT</a></p>
+			</div>
+
+		</div>
 	</body>
 </html>
