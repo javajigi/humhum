@@ -45,7 +45,7 @@
 									<%= f.password_field :password, class: "span2", placeholder: "Password" %>
 	
 									<%= f.submit "Sign in", class: "btn" %>
-									
+
 									<% if devise_mapping.rememberable? -%>
 										<label class="checkbox muted"><%= f.check_box :remember_me %><%= f.label :remember_me %></label>
 									<% end %>
@@ -60,16 +60,19 @@
 		</div>
 
 		<div class="container">
+
 			<!--<p class="notice text-info"><%= notice %></p>
 			<p class="alert text-warning"><%= alert %></p>-->
 
 			<%= yield %>
 
-			<div id="footer">
-				<div class="pull-right">
-					<p class="muted credit">2013<a href="http://nhnnext.org" class="btn btn-link">NHNNEXT</a></p>
-				</div>
+		</div>
+
+		<div id="footer" class="container navbar-fixed-bottom">
+			<div class="pull-right">
+				<a href="http://nhnnext.org" class="btn btn-link">NHNNEXT</a>
 			</div>
 		</div>
+
 	</body>
 </html>
