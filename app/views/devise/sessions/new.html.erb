@@ -2,21 +2,21 @@
 <img id="이연희" src="http://c.ask.nate.com/imgs/qrsi.php/6244643/8315178/0/1/A/%EC%9D%B4%EC%97%B0%ED%9D%AC.jpg">
 
 <div id="sign_up">
-	<h2>Sign up</h2>
+	<h2>회원가입</h2>
 
-		<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  
-  			<%= devise_error_messages! %>
+	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  		<%= devise_error_messages! %>
 
-  			<div><%= f.label :email %> <%= f.email_field :email, :autofocus => true %></div>
+  		<div><%= f.label "이름" %> <%= f.text_field :username, :autofocus => true %></div>
+  		<div><%= f.label "이메일 주소" %> <%= f.email_field :email %></div>
 
-  			<div><%= f.label :password %> <%= f.password_field :password %></div>
+  		<div><%= f.label "비밀번호" %> <%= f.password_field :password %></div>
+ 		<div><%= f.label "비밀번호 확인" %> <%= f.password_field :password_confirmation %></div>
+ 		<br />
+ 		
+  		<div><%= f.submit "가입하기", class: "btn btn-primary" %></div>
 
- 			<div><%= f.label :password_confirmation %> <%= f.password_field :password_confirmation %></div>
- 			<br />
-  			<div><%= f.submit "Sign up", class: "btn btn-primary" %></div>
-
-<% end %>
+	<% end %>
 </div>
 
 
