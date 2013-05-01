@@ -7,7 +7,7 @@
 	  	<%= csrf_meta_tags %>
 	</head>
 
-	<body>
+	<body background="http://www.kplay.org/files/attach/images/5744/229/002/d3aced699433739def539485ad8306ec.jpg">
 
 		<a href="https://github.com/javajigi/humhum">
 			<img id="github_ribbons" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub">
@@ -22,6 +22,7 @@
 					<div class="nav-collapse collapse">
 
 						<div class="pull-right">
+
 							<% if user_signed_in? %>
 
 								<ul class="nav">
@@ -36,24 +37,9 @@
 										</ul>
 									</li>
 								</ul>
-
-							<% else %>
-								<%= form_for(resource, :html => {:class => "navbar-form"}, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-
-									<%= f.email_field :email, class: "span2", placeholder: "이메일 주소" %>
-
-									<%= f.password_field :password, class: "span2", placeholder: "비밀번호" %>
-	
-									<%= f.submit "로그인", class: "btn" %>
-
-									<% if devise_mapping.rememberable? -%>
-										<label class="checkbox muted"><%= f.check_box :remember_me %><%= f.label "로그인 상태 유지" %></label>
-									<% end %>
-
-								<% end %>
 							<% end %>
-						</div>
 
+						</div>
 					</div>
 				</div>
 			</div>
@@ -70,7 +56,7 @@
 
 		<div id="footer" class="container navbar-fixed-bottom">
 			<div class="pull-right">
-				<a href="http://nhnnext.org" class="btn btn-link">NHNNEXT</a>
+				<a href="http://nhnnext.org" class="btn btn-link">NHNNEXT 2013</a>
 			</div>
 		</div>
 

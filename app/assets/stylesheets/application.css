@@ -39,23 +39,9 @@ body
 	min-height: 100px;
 }
 
-#sign_up
-{
-	width: 300px;
-	position: relative;
-	float: right;
-	margin-top: 100px;
-	padding: 50px;
-	text-align: left;
-}
 
 #musicfeed
 {
-}
-#이연희
-{
-	padding: 50px;
-	width: 350px;
 }
 
 .streamMusic
