@@ -1,16 +1,16 @@
-<h2>비밀번호를 잊어버리셨나요?</h2>
 
-<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {class: "form-horizontal", :method => :post }) do |f| %>
 
-  <%= devise_error_messages! %>
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {class: "form-horizontal span5", :method => :post }) do |f| %>
+	<legend>비밀번호를 잊어버리셨나요?</legend>
+    <%= devise_error_messages! %>
 
-  <div class="control-group">
-  	<%= f.label "이메일", class: "control-label" %> 
-  	<div class="controls"><%= f.email_field :email, :autofocus => true %></div>
-  </div>
+	<div class="control-group">
+  		<%= f.label "이메일", class: "control-label" %> 
+  		<div class="controls"><%= f.email_field :email, :autofocus => true %></div>
+    </div>
 
-  <div class="control-group">
-  	<%= f.submit "비밀번호 찾기", class: "controls btn btn-info" %>
-  </div>
+	<div class="control-group">
+  		<%= f.submit "비밀번호 찾기", class: "controls btn btn-info" %>
+	</div>
 
 <% end %>

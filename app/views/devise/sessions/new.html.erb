@@ -1,7 +1,7 @@
 
-<h2>로그인</h2>
-<%= form_for(resource, :html => {:class => "form-horizontal"}, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  
+
+<%= form_for(resource, :html => {:class => "form-horizontal span5"}, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <legend>로그인</legend>
   <div class="control-group">
   	<%= f.label "이메일", class: "control-label" %> 
   	<div class="controls"><%= f.email_field :email, :autofocus => true %></div>
@@ -22,6 +22,7 @@
   	<%= f.submit "로그인", class: "controls btn btn-primary" %>
   </div>
 
-<% end %>
 
-<%= render "devise/shared/links" %>
+	<%= render "devise/shared/links" %>
+
+<% end %>
