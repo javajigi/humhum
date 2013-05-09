@@ -6,6 +6,7 @@ class MusicsController < ApplicationController
   # GET /musics.json
   def index
     @musics = Music.all
+    @music = Music.new
     
     respond_to do |format|
       format.html # index.html.erb
@@ -47,7 +48,7 @@ class MusicsController < ApplicationController
 
     respond_to do |format|
       if @music.save
-        format.html { redirect_to @music, notice: 'Music was successfully created.' }
+        format.html { redirect_to "/musics" }
         format.json { render json: @music, status: :created, location: @music }
       else
         format.html { render action: "new" }
