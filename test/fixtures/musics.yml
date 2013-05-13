@@ -1,13 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  title: MyString
-  description: MyText
-  filename: MyString
-  artist: MyString
-
-two:
-  title: MyString
-  description: MyText
-  filename: MyString
-  artist: MyString
+  user_picture: profile.jpg
+  user_name: psy
+  album_picture: kangnam_style.jpg
+  album_title: kangname sytle
+  album_description: 이 노래는 싸이가 부른 강남 스타일
+  filename: kangname_style.mpc
