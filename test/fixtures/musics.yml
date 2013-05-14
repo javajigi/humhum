@@ -1,9 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-<<<<<<< HEAD
-one: {}
-
-=======
 one:
   user_picture: profile.jpg
   user_name: psy
@@ -11,4 +7,3 @@ one:
   album_title: kangname sytle
   album_description: 이 노래는 싸이가 부른 강남 스타일
   filename: kangname_style.mpc
->>>>>>> 9502b0b27eb244957468310df227d625294914a0
