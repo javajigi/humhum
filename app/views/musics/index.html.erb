@@ -13,6 +13,11 @@
 
         <% @musics.each do |music| %>
           <li class="streamMusic">
+            <!-- 삭제 버튼 -->
+            <div class="navigateButton">
+              <%= link_to icon(:remove), music, :confirm => 'Are you sure?', :method => :delete %>
+            </div>
+
             <div class="musicContent">
               <!-- 사용자 사진 -->
               <img class="userPicture" src ="<%=music.user_picture %>"/>

@@ -44,6 +44,11 @@ body
 {
 }
 
+.navigateButton
+{
+	margin: 4px;
+	float: right;
+}
 
 .streamMusic
 {
