@@ -46,6 +46,7 @@ class MusicsController < ApplicationController
   def create
     @music = Music.new(params[:music])
     @music.user_name = current_user.username
+    @music.user_picture = current_user.user_picture
 
     respond_to do |format|
       if @music.save
