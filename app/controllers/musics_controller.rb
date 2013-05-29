@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 class MusicsController < ApplicationController
 
   before_filter :authenticate_user!
@@ -41,21 +43,19 @@ class MusicsController < ApplicationController
     @music = Music.find(params[:id])
   end
 
-  def upload
-
-  end
-
   # POST /musics
   # POST /musics.json
   def create
     @music = Music.new(params[:music])
     @music.user_name = current_user.username
-    @music.user_picture = "aa.jpg"
-        uploaded_io = params[:person][:picture]
-    File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'w') do |file|
+    @music.user_picture = "aa.jpg" # 페이스북 개인 사진 받아와야 함
+
+    # params[:person][:picture] 수정
+    uploaded_io = params[:music][:filename]
+    File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
       file.write(uploaded_io.read)
     end
-    
+
     respond_to do |format|
       if @music.save
         format.html { redirect_to "/musics" }
