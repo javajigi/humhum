@@ -51,12 +51,18 @@ class MusicsController < ApplicationController
     @music.user_picture = current_user.user_picture
 
     # params[:person][:picture] 수정
-    uploaded_io = params[:music][:filename]
-    File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
-      file.write(uploaded_io.read)
+    mp3_filename = params[:music][:filename]
+    File.open(Rails.root.join('public', 'uploads', mp3_filename.original_filename), 'wb') do |file|
+      file.write(mp3_filename.read)
     end
 
-    @music.filename = uploaded_io.original_filename
+    album_picture_filename = params[:music][:album_picture]
+    File.open(Rails.root.join('public', 'uploads', album_picture_filename.original_filename), 'wb') do |file|
+      file.write(album_picture_filename.read)
+    end
+
+    @music.filename = mp3_filename.original_filename
+    @music.album_picture = album_picture_filename.original_filename
 
     respond_to do |format|
       if @music.save
