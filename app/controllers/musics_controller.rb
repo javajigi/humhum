@@ -48,13 +48,15 @@ class MusicsController < ApplicationController
   def create
     @music = Music.new(params[:music])
     @music.user_name = current_user.username
-    @music.user_picture = "aa.jpg" # 페이스북 개인 사진 받아와야 함
+    @music.user_picture = 'http://binaryapi.ap.org/b18aee87a63e4ad1954406ff9b08be2f/460x.jpg'
 
     # params[:person][:picture] 수정
     uploaded_io = params[:music][:filename]
     File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
       file.write(uploaded_io.read)
     end
+
+    @music.filename = uploaded_io.original_filename
 
     respond_to do |format|
       if @music.save
