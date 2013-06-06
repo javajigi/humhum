@@ -1,6 +1,5 @@
 
-
-<%= form_for(resource, :html => {:class => "form-horizontal span5"}, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+<%= form_for(resource, :html => {:class => "form-horizontal span8"}, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <legend>로그인</legend>
   <div class="control-group">
   	<%= f.label "이메일", class: "control-label" %> 
@@ -17,6 +16,7 @@
     <label class="controls"><%= f.check_box :remember_me %></label>
   <% end -%>
   <br />
+
 
   <div class="control-group">
   	<%= f.submit "로그인", class: "controls btn btn-primary" %>

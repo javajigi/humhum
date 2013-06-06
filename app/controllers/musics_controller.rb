@@ -9,7 +9,15 @@ class MusicsController < ApplicationController
   def index
     @musics = Music.all
     @music = Music.new
+
+    @friends = Array.new
+    me = FbGraph::User.new('me', :access_token => current_user.authentication_token).fetch
     
+    raw_friends = me.friends 
+    raw_friends.each do |raw_friend|
+      @friends << raw_friend if User.find_by_identifier(raw_friend.identifier)
+    end
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @musics }

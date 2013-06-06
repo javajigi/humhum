@@ -5,3 +5,5 @@ class Music < ActiveRecord::Base
   			:presence => true
 
 end
+
+
