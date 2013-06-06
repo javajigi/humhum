@@ -1,6 +1,8 @@
 #encoding: utf-8
 
 class UsersController < ApplicationController
+  before_filter :authenticate_user!
+
   def mymusics
     respond_to do |format|
       format.html
@@ -23,6 +25,16 @@ class UsersController < ApplicationController
     end  	
   end
 
+  def follower
+    @relationship = Relationship.new
+    @relationship.follower = User.find_by_identifier(params[:identifier])
+    @relationship.followed = current_user
+
+    respond_to do |format|
+      @relationship.save
+      format.html { redirect_to "/musics" }
+    end
+  end
 
 	def show
 		@friend = User.find_by_identifier(params[:identifier])

@@ -54,12 +54,18 @@
 				<div class="span4">
 					<% if @friends %>	
 						<% @friends.each do |friend| %>
-						  <li><%= link_to friend.raw_attributes[:name], user_path(:identifier => friend.identifier), class: "btn btn-link" %></li>
+						  <li><%= link_to friend.raw_attributes[:name], users_path(:identifier => friend.identifier), class: "btn btn-link" %>&nbsp;
+						  	<a href="/users/follower?identifier=<%= friend.identifier %>">Follow</a>
+						  </li>
 						<% end %>
+					<% end %>
+					<br/>
+					<% if user_signed_in? %>
+					<a href="/users/<%= current_user.id %>/followers">Follower user</a>&nbsp;
+					<a href="/users/<%= current_user.id %>/following">Following user</a>
 					<% end %>
 				</div>
 			</div>
-
 		</div>
 
 		<div id="footer" class="container navbar-fixed-bottom">

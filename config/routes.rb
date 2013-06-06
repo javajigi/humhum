@@ -1,6 +1,5 @@
 Humhum::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks"}
-  get '/user'=> 'users#show'
 
   resources :users do
     member do
@@ -8,7 +7,7 @@ Humhum::Application.routes.draw do
     end
 
     collection do
-      get 'mymusics'
+      get :mymusics, :show, :follower
     end
   end
   resources :musics
