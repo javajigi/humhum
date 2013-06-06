@@ -1,6 +1,16 @@
 Humhum::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks"}
   get '/user'=> 'users#show'
+
+  resources :users do
+    member do
+      get :following, :followers
+    end
+
+    collection do
+      get 'mymusics'
+    end
+  end
   resources :musics
 
   # The priority is based upon order of creation:

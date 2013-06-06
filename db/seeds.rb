@@ -13,9 +13,3 @@
 		   {user_picture:'http://wstatic.dcinside.com/new/a_new/ahh/201108/iu0829.jpg', user_name:'아이유', album_picture:'http://cfile233.uf.daum.net/image/1502D6394ED9CA4C1F1D00', album_title:'너랑나', album_description:'기다려줘 너랑 나랑은 지금 안되지 시계를 더 보채고 싶지만 네가 있던 미래에서 내 이름을... 건다 너랑 나랑은 조금 남았지 몇날 몇실진 모르겠지만 네가 있을 미래에서 혹시 내가 헤맨다면 너를 알아볼 수 있게 내 이름을 불러줘', filename:'너랑나.mp3', ip:'127.0.0.1'},
 		   {user_picture:'http://4.bp.blogspot.com/-FSoLIvTw_BI/T4axzIiIKAI/AAAAAAAAAHE/xb6lQg6vGzA/s1600/%25B9%25F6~1.JPG', user_name:'버스커버스커', album_picture:'http://i681.photobucket.com/albums/vv171/chiungying_album/BuskerBusker.jpg', album_title:'벚꽃엔딩', album_description:'그대여 그대여 그대여 그대여 그    대여 오늘은 우리 같이 걸어요 이 거리를 밤에 들려오는 자장노래 어떤가요 ( oh yeah ) 몰랐던 그대와 단 둘이 손 잡고 알 수 없는 이 떨림과 둘이 걸어요 봄바람 휘날리며 흩날리는 벚꽃 잎이', filename:'벚꽃엔딩.mp3', ip:'27.0.0.1'},
 		   {user_picture:'http://cfile221.uf.daum.net/image/177564444FE5BC2502DB10', user_name:'처진달팽이', album_picture:'http://i.ytimg.com/vi/gMbqagfXSWw/0.jpg', album_title:'말하는대로', album_description:'두눈을 감아도 통 잠은 안오고 가슴은 아프도록 답답할때 난 왜 안되지 왜 난 안되지 되뇌었지 말하는 대로 말하는 대로 될 수 있다곤 믿지 않았지 믿을 수 없었지 마음먹은 대로 생각한 대로 할 수 있단 건 거짓말 같았지 고개를 저었지 그러던 어느 날 내 맘에', filename:'말하는대로.mp3', ip:'127.0.0.1'}])
-
-
-
-
-
-
