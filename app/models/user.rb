@@ -23,9 +23,10 @@ class User < ActiveRecord::Base
 	def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
 		data = access_token.info
 		if user = User.where(:email => data.email).first
-	    	user
+      user.update_attributes(:email => data.email, :username => data.name, :user_picture => data.image, :authentication_token => access_token.credentials.token, :identifier => access_token.uid )
+      user
 		else # Create a user with a stub password. 
-			token = Devise.friendly_token[0,20]
+    token = Devise.friendly_token[0,20]
 	    User.create!(:email => data.email, :password => token, :password_confirmation => token, :username => data.name, :user_picture => data.image, :authentication_token => access_token.credentials.token, :identifier => access_token.uid ) 
 		end
 	end
