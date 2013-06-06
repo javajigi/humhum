@@ -11,6 +11,15 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :user_picture
   # attr_accessible :title, :body
 
+  has_many :relationships, foreign_key: "follower_id", dependent: :destroy
+  has_many :followed_users, through: :relationships, source: :followed
+
+  has_many :reverse_relationships, foreign_key: "followed_id",
+                                   class_name:  "Relationship",
+                                   dependent:   :destroy
+                                   
+  has_many :followers, through: :reverse_relationships, source: :follower
+
 	def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
 		data = access_token.info
 		if user = User.where(:email => data.email).first
