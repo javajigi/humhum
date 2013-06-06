@@ -25,13 +25,6 @@ ActiveRecord::Schema.define(:version => 20130606094619) do
     t.datetime "updated_at",        :null => false
   end
 
-  create_table "relations", :force => true do |t|
-    t.integer  "following_id"
-    t.integer  "follower_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
   create_table "relationships", :force => true do |t|
     t.integer  "follower_id"
     t.integer  "followed_id"
