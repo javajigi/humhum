@@ -17,7 +17,7 @@ class MusicsController < ApplicationController
     raw_friends.each do |raw_friend|
       @friends << raw_friend if User.find_by_identifier(raw_friend.identifier)
     end
-
+    puts '########'+@friends.inspect
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @musics }

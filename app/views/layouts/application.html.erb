@@ -52,13 +52,19 @@
 					<%= yield %>
 				</div>
 				<div class="span4">
-					<% if @friends %>	
-						<% @friends.each do |friend| %>
-						  <li><%= link_to friend.raw_attributes[:name], users_path(:identifier => friend.identifier), class: "btn btn-link" %>&nbsp;
-						  	<a href="/users/follower?identifier=<%= friend.identifier %>">Follow</a>
-						  </li>
+					<ul class="nav nav-tabs nav-stacked">
+						<% if @friends %>	
+							<% @friends.each do |friend| %>
+							<div>
+							  <li>
+									<%= image_tag "https://graph.facebook.com/#{friend.identifier}/picture", width: '50px' %>
+							  	<%= link_to friend.raw_attributes[:name], users_path(:identifier => friend.identifier), class: "btn btn-link" %>&nbsp;
+							  	<a href="/users/follower?identifier=<%= friend.identifier %>">Follow</a>
+							  </li>
+							</div>
+							<% end %>
 						<% end %>
-					<% end %>
+					</ul>
 					<br/>
 					<% if user_signed_in? %>
 					<a href="/users/<%= current_user.id %>/followers">Follower user</a>&nbsp;
