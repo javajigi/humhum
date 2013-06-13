@@ -3,11 +3,11 @@ Humhum::Application.routes.draw do
 
   resources :users do
     member do
-      get :following, :followers
+      get :following, :followers, :mymusics
     end
 
     collection do
-      get :mymusics, :show, :follower
+      get :show, :follower
     end
   end
   resources :musics

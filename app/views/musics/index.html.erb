@@ -27,7 +27,7 @@
                   <div role="article">
                     <!-- 사용자 이름 -->
                     <div class="userName">
-                      <p><%= music.user_name %>
+                      <p><a href="/users/<%= current_user.id %>/mymusics"><%= music.user.username %></a>
                         <object type="application/x-shockwave-flash" data="musics/dewplayer.swf?mp3=uploads/<%= music.filename %>" width="200" height="20" id="dewplayer">
                           <param name="wmode" value="transparent" />
                           <param name="movie" value="musics/dewplayer.swf?mp3=uploads/<%= music.filename %>" />
