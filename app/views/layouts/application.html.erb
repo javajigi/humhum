@@ -7,14 +7,14 @@
 	  	<%= csrf_meta_tags %>
 	</head>
 
-	<body background="/assets/overview.jpg">
+	<body background="/assets/main_background.jpg">
 
 
 		<a href="https://github.com/javajigi/humhum">
 			<img id="github_ribbons" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub">
 		</a>
 
-		<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar navbar-fixed-top">
 			<div class="navbar-inner">
 				<div class="container">
 
@@ -58,18 +58,14 @@
 							<div>
 							  <li>
 									<%= image_tag "https://graph.facebook.com/#{friend.identifier}/picture", width: '50px' %>
-							  	<%= link_to friend.raw_attributes[:name], users_path(:identifier => friend.identifier), class: "btn btn-link" %>&nbsp;
-							  	<a href="/users/follower?identifier=<%= friend.identifier %>">Follow</a>
+							  	<%= link_to friend.raw_attributes[:name], users_path(:identifier => friend.identifier), class: "btn btn-link" %>
+							  	<%= link_to 'Follow', "/users/follower?identifier=#{friend.identifier}", class: 'btn btn-link pull-right' %>
 							  </li>
 							</div>
 							<% end %>
 						<% end %>
 					</ul>
 					<br/>
-					<% if user_signed_in? %>
-					<a href="/users/<%= current_user.id %>/followers">Follower user</a>&nbsp;
-					<a href="/users/<%= current_user.id %>/following">Following user</a>
-					<% end %>
 				</div>
 			</div>
 		</div>
