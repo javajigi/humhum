@@ -5,6 +5,10 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!
 
   def mymusics
+    @user = User.find(params[:id])
+    @music = Music.new
+    @musics = @user.musics
+
     respond_to do |format|
       format.html
     end

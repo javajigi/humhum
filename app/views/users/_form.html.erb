@@ -1,0 +1,46 @@
+<%= form_for(@music) do |f| %>
+  <% if @music.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@music.errors.count, "error") %> prohibited this music from being saved:</h2>
+
+      <ul>
+      <% @music.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div style="float:left;">  
+    <%= f.text_field :album_title,
+     :placeholder => "음악 앨범 이름", :style => "width:180px;" %>
+  </div>   
+
+  <div style="float:right;">
+    <div id="test">
+      <div class="wrapper">
+          <%= f.file_field :album_picture, :style => "width:100px" %>
+      </div>
+      <button class="btn"><i class="icon-play-circle"></i> 앨범 이미지</button>
+    </div>
+  </div>
+
+    <%= f.text_area :album_description,
+     :placeholder => "음악 앨범 설명", :style => "width:500px;height:100px"%>
+
+  <div style="float:left;">
+    <div id="test">
+      <div class="wrapper">
+          <%= f.file_field :filename, :style => "width:90px" %>
+      </div>
+      <button class="btn" href="#"><i class="icon-music"></i> 음악 첨부</button>
+    </div>
+  </div>
+
+  <div style="float:right;">
+     <button class="btn btn-primary" src=<%= f.submit %> 음악 업로드 </button>
+  </div>
+  <br>
+  <br>
+<% end %>
+
